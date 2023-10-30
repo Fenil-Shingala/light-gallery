@@ -1,0 +1,105 @@
+.main-div {
+  .upload-file-box {
+    .upload-label {
+      width: 100%;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px dashed rgb(52, 96, 255, 0.5);
+      background-color: rgb(52, 96, 255, 0.1);
+      cursor: pointer;
+      border-radius: 10px;
+      span {
+        font-size: 50px;
+        color: var(--color-blue);
+      }
+      p {
+        color: var(--color-blue);
+        font-size: 20px;
+        font-weight: 800;
+        font-family: cursive;
+      }
+    }
+  }
+  .file-lists {
+    max-height: 350px;
+    overflow: auto;
+    .list-title {
+      font-size: 16px;
+      margin: 30px 0;
+      font-weight: 700;
+      color: var(--color-gray);
+    }
+    .show-file-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: #0000000d 0px 0px 0px 1px, #d1d5db3d 0px 0px 0px 1px inset;
+      .left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        .file-type {
+          &.orange-color {
+            color: var(--color-orange);
+            background-color: rgba(255, 166, 0, 0.3);
+          }
+          &.red-color {
+            color: var(--color-red);
+            background-color: rgb(255, 0, 0, 0.3);
+          }
+          &.green-color {
+            color: var(--color-green);
+            background-color: rgb(0, 128, 0, 0.3);
+          }
+          &.blue-color {
+            color: var(--color-blue);
+            background-color: rgb(0, 0, 255, 0.3);
+          }
+          &.black-color {
+            color: var(--color-black);
+            background-color: rgb(0, 0, 0, 0.3);
+          }
+          padding: 3px 13px;
+          font-size: 16px;
+          text-transform: capitalize;
+          font-weight: 700;
+          border-radius: 3px;
+        }
+        h3 {
+          font-weight: 600;
+          font-size: 14px;
+          color: #292f42;
+          margin: 0;
+          width: 160px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--color-gray);
+        i {
+          cursor: pointer;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-blue);
+    border-radius: 10px;
+  }
+}

@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/scss/bootstrap";
+
+:root {
+  --color-gainsboro: gainsboro;
+  --color-gray: #7f7f7f;
+  --color-black: black;
+  --color-white: white;
+  --color-blue: #3461ff;
+  --color-green: green;
+  --color-red: red;
+  --color-orange: orange;
+}

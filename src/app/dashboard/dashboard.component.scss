@@ -1,0 +1,190 @@
+.dashboard-wrapper {
+  .header {
+    @media screen and (max-width: 580px) {
+      flex-direction: column;
+      .search {
+        width: 100%;
+      }
+      .action-buttons {
+        width: 100%;
+        margin-top: 12px;
+      }
+    }
+    .search {
+      .form-group {
+        &.has-search .form-control {
+          padding-left: 2.375rem;
+        }
+        &.has-search .form-control-feedback {
+          position: absolute;
+          z-index: 2;
+          display: block;
+          width: 2.375rem;
+          height: 2.375rem;
+          line-height: 2.375rem;
+          text-align: center;
+          pointer-events: none;
+          color: #aaa;
+        }
+      }
+    }
+    .action-buttons {
+      .delete-button {
+        button {
+          padding: 6px 10px;
+          color: var(--color-gray);
+          &:hover {
+            color: black;
+          }
+        }
+      }
+      .image-list-type {
+        ul {
+          background-color: var(--color-gainsboro);
+          padding: 2px;
+          border-radius: 5px;
+          li {
+            button {
+              color: var(--color-gray);
+              border-radius: 5px;
+              padding: 4px 10px;
+            }
+            .nav-link.active {
+              color: var(--color-black);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .image-section {
+    .image-group {
+      margin: -10px;
+      .card-image {
+        width: 25%;
+        padding: 10px;
+        @media screen and (max-width: 1024px) {
+          width: 33.33%;
+        }
+        @media screen and (max-width: 768px) {
+          width: 50%;
+        }
+        @media screen and (max-width: 580px) {
+          width: 100%;
+        }
+      }
+      .image-div {
+        height: 150px;
+        border: 1px solid var(--color-gainsboro);
+        border-radius: 8px;
+        text-align: center;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        img {
+          object-fit: scale-down;
+          transition: 0.5s ease;
+          backface-visibility: hidden;
+          opacity: 1;
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .middle {
+          transition: 0.5s ease;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+        }
+        .top {
+          transition: 0.5s ease;
+          opacity: 0;
+          position: absolute;
+          top: 0%;
+          right: 0%;
+          transform: translate(-50%, 0%);
+          .delete-icon {
+            color: var(--color-black);
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+        &:hover img {
+          opacity: 0.4;
+        }
+        &:hover .middle {
+          opacity: 1;
+        }
+        &:hover .top {
+          opacity: 1;
+        }
+        .text {
+          background-color: var(--color-white);
+          color: var(--color-black);
+          font-size: 14px;
+          padding: 8px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+      .image-name-text {
+        width: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: var(--color-gray);
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+    .image-list-group {
+      .show-file-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 6px 15px;
+        border-radius: 8px;
+        box-shadow: #0000000d 0px 0px 0px 1px, #d1d5db3d 0px 0px 0px 1px inset;
+        .left {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          img {
+            width: 45px;
+            height: 45px;
+          }
+          h3 {
+            font-weight: 600;
+            font-size: 14px;
+            color: #292f42;
+            margin: 0;
+            @media screen and (max-width: 580px) {
+              width: 160px;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+            }
+          }
+        }
+        .right {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: var(--color-gray);
+          font-size: 17px;
+          i {
+            cursor: pointer;
+            font-weight: 800;
+          }
+        }
+      }
+    }
+  }
+}

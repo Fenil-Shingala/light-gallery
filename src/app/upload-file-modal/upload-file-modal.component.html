@@ -1,0 +1,75 @@
+<div class="m-3 main-div">
+  <div class="modal-header p-2 pb-3 d-flex align-items-center">
+    <h5 class="m-0">Upload</h5>
+    <a
+      type="button"
+      class="btn-close"
+      aria-describedby="modal-title"
+      (click)="modal.dismiss()"
+    ></a>
+  </div>
+  <div class="upload-file-box">
+    <form>
+      <input
+        type="file"
+        id="upload"
+        accept=".jpg,.png,.svg,.gif,.jpeg"
+        hidden
+        multiple
+        (change)="selectFile($event)"
+      />
+      <label for="upload" class="upload-label">
+        <span><i class="fa fa-cloud-upload"></i></span>
+        <p>Click to upload</p>
+      </label>
+    </form>
+  </div>
+  <div class="file-lists">
+    <h3 class="list-title">Uploaded images</h3>
+    <div class="show-file-box" *ngFor="let list of selectedFiles">
+      <div class="left">
+        <span
+          class="file-type"
+          [ngClass]="
+            (list.imageType | uppercase) === 'JPG' ||
+            (list.imageType | uppercase) === 'JPEG'
+              ? 'orange-color'
+              : (list.imageType | uppercase) === 'GIF'
+              ? 'red-color'
+              : (list.imageType | uppercase) === 'PNG'
+              ? 'green-color'
+              : (list.imageType | uppercase) === 'SVG'
+              ? 'blue-color'
+              : 'black-color'
+          "
+          >{{ list.imageType | uppercase }}</span
+        >
+        <h3 title="{{ list.imageName }}">{{ list.imageName }}</h3>
+      </div>
+      <div class="right">
+        <p class="m-0 me-2">{{ list.size }} KB</p>
+        <i (click)="deleteSelectedFiel(list.id)" class="fa-solid fa-x"></i>
+      </div>
+    </div>
+    <div *ngIf="selectedFiles.length <= 0">
+      <h4 class="my-3 text-muted text-center">No file selected</h4>
+    </div>
+  </div>
+  <div class="modal-footer p-2">
+    <button
+      type="button"
+      class="btn btn-outline-secondary"
+      (click)="modal.dismiss('cancel click')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      ngbAutofocus
+      class="btn btn-danger"
+      (click)="submit()"
+    >
+      Ok
+    </button>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div *ngIf="showMask" class="lightbox" @animation2>
+  <span class="count">{{ curentIndex + 1 }}/{{ displayImages.length }}</span>
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      [style.width]="progressValue + '%'"
+    ></div>
+  </div>
+  <button class="close-btn" (click)="closePreviewImage()">
+    <i class="fa-solid fa-x"></i>
+  </button>
+  <button class="play-btn">
+    <i
+      (click)="playSlideShow()"
+      class="fa-solid"
+      [ngClass]="slideshow ? 'fa-circle-pause' : 'fa-circle-play'"
+    ></i>
+  </button>
+  <button class="btn-lightbox-crousel btn-prev" (click)="prev()">
+    <i class="fa-regular fa-circle-left icon-lighbox-carousel"></i>
+  </button>
+  <button class="btn-lightbox-crousel btn-next" (click)="next()">
+    <i class="fa-regular fa-circle-right icon-lighbox-carousel"></i>
+  </button>
+  <div
+    [@animation]="{ value: 'visible' }"
+    (@animation.done)="onAnimationEnd($event)"
+    class="lightbox-img"
+    [@rightImageAnimation]="{
+      value: nextButton ? 'visible' : 'void'
+    }"
+    (@rightImageAnimation.done)="onSlideAnimationEnd($event)"
+    [@leftImageAnimation]="{
+      value: prevButton ? 'visible' : 'void'
+    }"
+    (@leftImageAnimation.done)="onSlideAnimationEnd($event)"
+  >
+    <img [src]="curentImage.url" alt="" />
+    <div class="text-white d-flex align-items-center justify-content-between">
+      <div class="text-start">
+        {{ curentImage.imageName }}
+      </div>
+      <div class="text-end">{{ curentImage.size }} KB</div>
+    </div>
+  </div>
+  <div
+    class="lightbox-all-image d-flex"
+    [ngClass]="{
+      'justify-content-start': displayImages.length > 14
+    }"
+  >
+    <div
+      *ngFor="let image of displayImages; let i = index"
+      class="lightbox-img-list"
+      (click)="onPreviewImage(i)"
+      [ngClass]="{ 'border-0': i !== curentIndex }"
+    >
+      <img
+        class="w-100 h-100"
+        [ngClass]="{ 'opacity-25 ': i === curentIndex }"
+        [src]="image.url"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

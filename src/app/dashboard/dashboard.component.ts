@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UploadFileModalComponent } from '../upload-file-modal/upload-file-modal.component';
 import { SharedServiceService } from '../services/shared-service/shared-service.service';
 import { Files } from '../interface/Files';
+import { DemoModalComponent } from '../demo-modal/demo-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -39,7 +40,7 @@ export class DashboardComponent {
   }
 
   open(): void {
-    const modalRef = this.modalService.open(UploadFileModalComponent);
+    const modalRef = this.modalService.open(DemoModalComponent);
     modalRef.dismissed.subscribe(() => {
       this.allImages = this.sharedService.getItemLocalStorage('allImages');
       this.displayImages = this.allImages;

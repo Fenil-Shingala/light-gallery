@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UploadFileModalComponent } from './upload-file-modal/upload-file-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FancyboxComponent } from './fancybox/fancybox.component';
+import { DemoModalComponent } from './demo-modal/demo-modal.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FancyboxComponent } from './fancybox/fancybox.component';
     DashboardComponent,
     UploadFileModalComponent,
     FancyboxComponent,
+    DemoModalComponent,
   ],
   imports: [
     BrowserModule,

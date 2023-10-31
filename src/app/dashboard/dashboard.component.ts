@@ -39,7 +39,7 @@ export class DashboardComponent {
   }
 
   open(): void {
-    const modalRef = this.modalService.open(DemoModalComponent);
+    const modalRef = this.modalService.open(UploadFileModalComponent);
     modalRef.dismissed.subscribe(() => {
       this.allImages = this.sharedService.getItemLocalStorage('allImages');
       this.displayImages = this.allImages;

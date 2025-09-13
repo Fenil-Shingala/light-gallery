@@ -43,7 +43,7 @@ A modern, responsive Angular image gallery application with advanced preview cap
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/light-gallery.git
+   git clone https://github.com/Fenil-Shingala/light-gallery.git
    cd light-gallery
    ```
 
@@ -113,29 +113,8 @@ src/
 - **Close**: Press Escape or click the X button
 - **Thumbnails**: Click any thumbnail to jump to that image
 
-## 🔧 Configuration
-
-### Backend Integration
-The application includes an API service for backend integration. Update the base URL in `src/app/services/api-service/api-service.service.ts`:
-
-```typescript
-basaeURl = 'http://your-backend-url:port';
-```
-
 ### Supported File Types
 Currently supports: `.jpg`, `.jpeg`, `.png`, `.svg`, `.gif`
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -143,10 +122,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Bootstrap](https://getbootstrap.com/) - CSS framework
 - [NgBootstrap](https://ng-bootstrap.github.io/) - Angular Bootstrap components
 - [Font Awesome](https://fontawesome.com/) - Icons
-
-## 📞 Support
-
-If you have any questions or suggestions, please feel free to open an issue or contact the maintainers.
 
 ---
 

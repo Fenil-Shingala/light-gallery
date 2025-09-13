@@ -5,7 +5,6 @@ A modern, responsive Angular image gallery application with advanced preview cap
 ![Angular](https://img.shields.io/badge/Angular-16.1.0-red?style=flat-square&logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.1.3-blue?style=flat-square&logo=typescript)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.2.3-purple?style=flat-square&logo=bootstrap)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 ## ✨ Features
 
